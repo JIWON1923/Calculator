@@ -11,18 +11,7 @@ class RootViewController: UIViewController{
     
     
     //Mark - Properties
-    private lazy var numberButton:UIButton = {
-        let btn = UIButton(type: UIButton.ButtonType.system)
-        btn.setTitle("1", for: UIControl.State.normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 50, weight:(UIFont.Weight.regular))
-        btn.backgroundColor = .systemGray2
-        btn.tintColor = .white
-        btn.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        btn.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        btn.layer.cornerRadius = 40
-        return btn
-        // lazy var : 동적으로 어떤 요소를 추가 후 버튼을 생성할 수 있도록
-    }()
+    private lazy var numberButton:UIButton = Utilites.shared.makeNumberBtn(number: "1", numberColor: .white, backgroundColor: .systemGray2)
     
     
     // Mark -  Lifecycles
