@@ -13,6 +13,8 @@ class RootViewController: UIViewController{
     //Mark - Properties
     private lazy var numberButton:UIButton = Utilites.shared.makeNumberBtn(number: "1", numberColor: .white, backgroundColor: .systemGray2)
     
+    private lazy var zeroNumberButton:UIButton = Utilites.shared.makeNumberBtnTypeTwo(number: "0", numberColor: .white, backgroundColor: .systemGray5)
+    
     
     // Mark -  Lifecycles
     
@@ -25,11 +27,14 @@ class RootViewController: UIViewController{
         
         // code로 UI를 썼을 때 동적으로 변할 수 있도록
         numberButton.translatesAutoresizingMaskIntoConstraints = false
-        
         numberButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         numberButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         
         
+        view.addSubview(zeroNumberButton)
+        zeroNumberButton.translatesAutoresizingMaskIntoConstraints = false
+        zeroNumberButton.topAnchor.constraint(equalTo: numberButton.bottomAnchor, constant: 20).isActive = true
+        zeroNumberButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
     }
     
     // Mark - Configure (UI 담당 함수)
